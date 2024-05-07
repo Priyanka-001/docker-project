@@ -3,7 +3,9 @@ pipeline {
     
     stages {
         stage('Build image') {
-            bat 'docker build -t Priyanka-001/docker-project:getting-started .'
+            steps{
+                bat 'docker build -t Priyanka-001/docker-project:getting-started .'
+            }
         }
     
          stage('Push image') {
