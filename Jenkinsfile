@@ -10,7 +10,7 @@ pipeline {
     
          stage('Push image') {
              steps {
-                withDockerRegistry([ credentialsId: "priyab173", url: "" ]) {
+                withDockerRegistry([ credentialsId: "docker", url: "" ]) {
                 bat 'docker push priyab173/docker-project:getting-started'
          
                 }
