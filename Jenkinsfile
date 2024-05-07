@@ -10,7 +10,7 @@ pipeline {
     
          stage('Push image') {
              steps {
-                {
+                
                 bat 'docker push priyab173/docker-project:getting-started'
          
                 }
