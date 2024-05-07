@@ -3,14 +3,18 @@ pipeline {
     
     stages {
         stage('Build image') {
-       dockerImage = docker.build("priyab173/docker-project:latest")
-    }
-    
- stage('Push image') {
-        withDockerRegistry([ credentialsId: "priyab173", url: "" ]) {
-        dockerImage.push()
+            bat 'docker build -t Priyanka-001/docker-project:getting-started .'
         }
-    } 
+    
+         stage('Push image') {
+             steps {
+                withDockerRegistry([ credentialsId: "priyab173", url: "" ]) {
+                bat 'docker push Priyanka-001/docker-project:getting-started'
+         
+                }
+        
+             } 
+         }
         // stage('Build Docker Image') {
         //     steps {
         //       bat 'docker build -t Priyanka-001/docker-project:getting-started .'
