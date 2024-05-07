@@ -10,19 +10,19 @@ pipeline {
             }
         }
         stage('Login') {
-    steps {
-        bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-    }
-}
+            steps {
+                bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
         stage('Push Docker Image') {
-                    steps {
-                     bat 'docker push Priyanka-001/docker-project:getting-started'
-                    }
-                }
+            steps {
+             bat 'docker push Priyanka-001/docker-project:getting-started'
+            }
         }
         stage('Deploy') {
             steps {
                 echo "deploying..."
             }
         }
+    }
 }
