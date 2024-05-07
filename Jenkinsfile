@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build image') {
             steps{
-                bat 'docker build -t Priyanka-001/docker-project:getting-started .'
+                bat 'docker build -t priyab173/docker-project:getting-started .'
             }
         }
     
          stage('Push image') {
              steps {
                 withDockerRegistry([ credentialsId: "priyab173", url: "" ]) {
-                bat 'docker push Priyanka-001/docker-project:getting-started'
+                bat 'docker push priyab173/docker-project:getting-started'
          
                 }
         
