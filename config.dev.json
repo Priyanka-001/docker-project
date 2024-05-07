@@ -1,0 +1,4 @@
+{
+    "databaseURL":"mongodb://localhost:2701/dev_database",
+    "apiEndpoint":"http://localhost:3000/dev/api"
+}

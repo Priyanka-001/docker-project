@@ -1,0 +1,4 @@
+{
+    "databaseURL":"mongodb://test_server/test_database",
+    "apiEndpoint":"http://test.api.com/api"
+}
